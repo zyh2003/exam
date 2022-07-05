@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const service = axios.create({
-  baseURL: '',
+  baseURL: 'https://www.markerhub.com/vueadmin-java',
   timeout: 5000
 })
 service.interceptors.request.use(function (config) {
