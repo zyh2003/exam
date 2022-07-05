@@ -1,7 +1,12 @@
 import http from './request'
 
-async function getCaptcha() {
-  const { data } = await http.get('/captcha')
-  return data
+function getCaptcha () {
+  return http({ url: '/captcha', method: 'get' })
 }
-export { getCaptcha }
+function login (params) {
+  return http({
+    url: `/login?username=${params.username}&password=${params.password}&code=${params.code}&token=${params.token}`,
+    method: 'post'
+  })
+}
+export { getCaptcha, login }
